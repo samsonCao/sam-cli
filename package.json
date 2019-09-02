@@ -1,0 +1,33 @@
+{
+  "name": "sam_cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "sam-cli": "./bin/www"
+  },
+  "hooks": {
+    "pre-commit": "npm run lint"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^6.3.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "husky": "^3.0.5"
+  },
+  "dependencies": {
+    "axios": "^0.19.0",
+    "commander": "^3.0.1",
+    "download-git-repo": "^2.0.0",
+    "inquirer": "^7.0.0",
+    "ora": "^3.4.0",
+    "path": "^0.12.7",
+    "util": "^0.12.1"
+  }
+}
