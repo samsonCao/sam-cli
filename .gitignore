@@ -1,3 +1,12 @@
-/node_modules
-.gitignore
-.idea
+.DS_STORE
+*.log
+node_modules
+coverage
+.idea/
+.yarn-cache
+.vscode
+package-lock.json
+yarn.lock
+coverage
+.cache
+
