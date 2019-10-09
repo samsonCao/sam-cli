@@ -2,28 +2,7 @@ const program = require('commander');
 const path = require('path');
 const chalk =require('chalk');
 
-const { version } = require('./util/constants');
-
-// 创建模板
-const actionsMap = {
-  create: {
-    description: 'create project',
-    alias: 'cr',
-    examples: [
-      'sam-cli create <template-name>',
-    ],
-  },
-  add: {
-    description: 'add demo',
-    alias: 'ad',
-    examples: [
-      'sam-cli add <command>',
-    ],
-  },
-  '*': {
-    description: 'Unknown command',
-  },
-};
+const { version, actionsMap } = require('./util/constants');
 
 // 循环创建命令
 Object.keys(actionsMap).forEach((action) => {
