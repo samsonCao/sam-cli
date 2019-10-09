@@ -24,8 +24,8 @@ module.exports = async (projectName) => {
   
   // 获取仓库信息，并获取仓库名字
   let repos = await wrapFetchAddLoading(fetchRepoList, 'fetching repo list')();
-  // repos = repos.map((item) => item.name);
-  repos = [repos.name];
+  repos = repos.map((item) => item.name);
+  // repos = [repos.name];
   const { repo } = await Inquirer.prompt({
     name: 'repo',
     type: 'list',
@@ -33,7 +33,7 @@ module.exports = async (projectName) => {
     choices: repos,
   });
   // 打印出被选中的项目模板名称给用户看
-  console.log(`  ` + chalk.green(`选择了版本`+ repo));
+  console.log(`  ` + chalk.green(`选择了项目：`+ repo));
 
 
   // 获取tag信息 确定使用哪个版本的仓库
@@ -46,7 +46,7 @@ module.exports = async (projectName) => {
     choices: tags,
   });
   // 打印出被选中的tag给用户看
-  console.log(`  ` + chalk.green(`选择了tag ` + tag));
+  console.log(`  ` + chalk.green(`选择了tag：` + tag));
 
   // 获取当前路径下的文件夹列表，判断当前命名的projecrName是否存在
   const currentFiles = fs.readdirSync(path.resolve()) || [];

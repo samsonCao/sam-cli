@@ -5,18 +5,21 @@ const { promisify } = require('util');     // 将异步api快速转成promise的
 let downLoadGit = require('download-git-repo');
 downLoadGit = promisify(downLoadGit);
 
-const { repositoryUrl, repositoryName} = require('./constants');
+const { org_repos_url, org_name } = require('./constants');
+
+// 根据选择的repo获取对应的tags列表
+const getOrgRepoTagsUrl = (repo) => `https://api.github.com/repos/${org_name}/${repo}/tags`;
 
 //获取仓库列表
 const fetchRepoList = async () => {
 // 获取当前组织中的所有仓库信息,这个仓库中存放的都是项目模板
-    const { data } = await axios.get( `${repositoryUrl}/${repositoryName}`);
+    const { data } = await axios.get( org_repos_url);
     return data;
 };
 
 // 获取tag
 const fetchTagList = async (repo) => {
-    const { data } = await axios.get(`${repositoryUrl}/${repo}/tags`);
+    const { data } = await axios.get(getOrgRepoTagsUrl(repo));
     return data; // 是一个tag数组 [{tag: 'xx', ...rest}, {tag: 'xx', ...rest}]
 };
 
@@ -27,7 +30,7 @@ const downloadDirectory = `${process.env[process.platform === 'darwin' ? 'HOME' 
 
 // 下载
 const download = async (repo, tag) => {
-    let api = `samsonCao/${repo}`; // samsonCao/react-iframe#v1.0.0或者v2.0.0 用户选择
+    let api = `${org_name}/${repo}`; // samsonCao/react-iframe#v1.0.0或者v2.0.0 用户选择
     if (tag) {
         api += `#${tag}`;
     }

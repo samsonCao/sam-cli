@@ -1,7 +1,7 @@
 const { name, version } = require('../../package.json');
+const org_name = 'vuejs';
+const org_repos_url = `https://api.github.com/orgs/${org_name}/repos`;
 
-const repositoryUrl = 'https://api.github.com/repos/samsonCao';
-const repositoryName = 'react-iframe';
 // 创建模板
 const actionsMap = {
   create: {
@@ -25,7 +25,7 @@ const actionsMap = {
 module.exports = {
   name,
   version,
-  repositoryUrl,
-  repositoryName,
+  org_name,
+  org_repos_url,
   actionsMap
 };
