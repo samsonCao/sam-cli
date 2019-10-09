@@ -1,5 +1,6 @@
 const program = require('commander');
 const path = require('path');
+const chalk =require('chalk');
 
 const { version } = require('./util/constants');
 
@@ -12,8 +13,15 @@ const actionsMap = {
       'sam-cli create <template-name>',
     ],
   },
+  add: {
+    description: 'add demo',
+    alias: 'ad',
+    examples: [
+      'sam-cli add <command>',
+    ],
+  },
   '*': {
-    description: 'command not found',
+    description: 'Unknown command',
   },
 };
 
@@ -23,11 +31,17 @@ Object.keys(actionsMap).forEach((action) => {
     .command(action) // 命令的名称
     .alias(actionsMap[action].alias) // 命令的别名
     .description(actionsMap[action].description) // 命令的描述
-    .action(() => {
+    .action((cmd) => {
       if (action === '*') {
-        console.log(actionsMap[action].description);
+        console.log(`  ` + chalk.red(`${actionsMap[action].description} ${chalk.yellow(cmd)}`));
+        console.log(`  Run ${chalk.cyan(`sam-cli <command> --help`)} for detailed usage of given command.`);
+        console.log(`  `)
+        console.log(`---------------------------------------`);
+        console.log(`  `)
+        program.outputHelp()
+        // suggestCommands(cmd)
       } else {
-        // 此处会自动截取输入的命令sam-cli create project，然后执行create.js的文件函数
+        // 此处会自动截取输入的命令sam-cli command args.js的文件函数
         require(path.resolve(__dirname, action))(...process.argv.slice(3));
       }
     });
@@ -38,7 +52,10 @@ program.on('--help', () => {
   console.log('Examples');
   Object.keys(actionsMap).forEach((action) => {
     (actionsMap[action].examples || []).forEach((example) => {
-      console.log(`  ${example}`);
+      console.log()
+      console.log(`  Run ${chalk.cyan(`sam-cli <command> --help`)} for detailed usage of given command.`)
+      console.log(`  ${chalk.cyan(`${example}`)}`);
+      console.log()
     });
   });
 });
