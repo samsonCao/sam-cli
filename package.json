@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "sam-cli": "./bin/www"
+    "samtest-cli": "./bin/www"
   },
   "hooks": {
     "pre-commit": "npm run lint"
