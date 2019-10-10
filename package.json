@@ -1,13 +1,13 @@
 {
-  "name": "sam_cli",
-  "version": "1.0.0",
+  "name": "samtest-cli",
+  "version": "1.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "samtest-cli": "./bin/www"
+    "sam-cli": "./bin/www"
   },
   "hooks": {
     "pre-commit": "npm run lint"

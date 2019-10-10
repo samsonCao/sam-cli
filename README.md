@@ -1,5 +1,10 @@
 这是一个练习开发脚手架的项目
 
+#### 全局安装
+```markdown
+npm install -g samtest-cli
+```
+
 #### 目前实现了的功能
 
 - 查看代码仓库的项目列表 `sam-cli list`
@@ -41,3 +46,7 @@
 -  https://juejin.im/post/5ac1e8036fb9a028bb192789#heading-26
 -  https://juejin.im/post/5d650613f265da03951a0364#comment
 -  https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli
+
+bugs:
+
+- v1.x.xtag标签的描述，描述2 tag标签存在中文逗号 `，`时，选择tag解析错误
