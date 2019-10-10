@@ -2,7 +2,7 @@
 *.log
 node_modules
 coverage
-.idea/
+.idea
 .yarn-cache
 .vscode
 package-lock.json
