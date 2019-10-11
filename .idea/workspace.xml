@@ -9,7 +9,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../samtest-cli" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../sam-cli" />
   </component>
   <component name="JsBowerSettings">
     <node-interpreter value="project" />
@@ -75,7 +75,7 @@
       <workItem from="1570675667265" duration="9796000" />
       <workItem from="1570695125457" duration="410000" />
       <workItem from="1570695551785" duration="307000" />
-      <workItem from="1570695861741" duration="2078000" />
+      <workItem from="1570695861741" duration="2753000" />
     </task>
     <servers />
   </component>

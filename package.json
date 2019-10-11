@@ -3,18 +3,16 @@
   "version": "1.0.2",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "bin": {
     "sam-cli": "./bin/www"
-  },
-  "hooks": {
-    "pre-commit": "npm run lint"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:samsonCao/sam-cli.git"
+  },
   "devDependencies": {
     "eslint": "^6.3.0",
     "eslint-config-airbnb-base": "^14.0.0",
